@@ -7,14 +7,6 @@ initializeApp({
 
 const db = getFirestore();
 
-const docRef = db.collection('users').doc('alovelace');
-
-await docRef.set({
-    first: 'Ada',
-    last: 'Lovelace',
-    born: 1815
-});
-
 async function salvar(nomeTabela, id, dado) {
     if (id) {
         const referenceEntity = await db.collection(nomeTabela).doc(id).set(dado);
